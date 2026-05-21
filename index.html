@@ -18,7 +18,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -29,7 +28,6 @@
       cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ctext y='20' font-size='20'%3E💅%3C/text%3E%3C/svg%3E") 12 20, auto;
     }
 
-    /* ── NOISE OVERLAY ── */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -46,36 +44,12 @@
       backdrop-filter: blur(14px);
       border-bottom: 2px solid var(--gold);
     }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem; font-weight: 900;
-      color: var(--hot);
-      letter-spacing: -0.5px;
-    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: var(--hot); letter-spacing: -0.5px; }
     .nav-logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex; gap: 32px; list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.82rem; font-weight: 500;
-      text-decoration: none; color: var(--deep);
-      letter-spacing: 0.08em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; font-weight: 500; text-decoration: none; color: var(--deep); letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--hot); }
-
-    .nav-badge {
-      background: var(--hot);
-      color: #fff;
-      font-size: 0.72rem; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 8px 20px; border-radius: 100px;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      border: none;
-    }
+    .nav-badge { background: var(--hot); color: #fff; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 20px; border-radius: 100px; cursor: pointer; transition: background 0.2s, transform 0.15s; border: none; }
     .nav-badge:hover { background: var(--deep); transform: scale(1.05); }
 
     /* ── HERO ── */
@@ -85,337 +59,151 @@
       align-items: center; justify-content: center;
       text-align: center;
       padding: 120px 24px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* animated background blobs */
-    .blob {
-      position: absolute; border-radius: 50%;
-      filter: blur(80px); opacity: 0.25;
-      animation: float 8s ease-in-out infinite;
-    }
-    .blob-1 { width: 500px; height: 500px; background: var(--pink); top: -120px; left: -100px; animation-delay: 0s; }
-    .blob-2 { width: 400px; height: 400px; background: var(--gold); top: 40%; right: -100px; animation-delay: -3s; }
-    .blob-3 { width: 300px; height: 300px; background: var(--blush); bottom: 0; left: 30%; animation-delay: -5s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-30px) scale(1.06); }
-    }
-
-    .hero-eyebrow {
-      font-size: 0.78rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--hot);
-      font-weight: 500; margin-bottom: 20px;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3.5rem, 10vw, 8rem);
-      font-weight: 900; line-height: 0.95;
-      color: var(--deep);
-      animation: fadeUp 0.9s 0.1s ease both;
-    }
-    .hero-title .pink { color: var(--hot); }
-    .hero-title .gold { color: var(--gold); -webkit-text-stroke: 1px var(--gold); }
-
-    .hero-sub {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(1.1rem, 3vw, 1.7rem);
-      color: var(--pink);
-      margin-top: 16px;
-      animation: fadeUp 1s 0.2s ease both;
-    }
-
-    .hero-slogan {
-      margin-top: 24px;
-      font-size: 0.88rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--deep);
-      opacity: 0.6;
-      animation: fadeUp 1s 0.3s ease both;
-    }
-
-    .hero-cta-row {
-      margin-top: 44px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
-      animation: fadeUp 1s 0.45s ease both;
-    }
-
-    .btn-primary {
-      background: var(--hot);
-      color: #fff; border: none;
-      padding: 16px 40px; border-radius: 100px;
-      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.1em;
-      text-transform: uppercase; cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 8px 32px rgba(255,0,110,0.35);
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(255,0,110,0.45); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--deep); border: 2px solid var(--gold);
-      padding: 14px 38px; border-radius: 100px;
-      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.1em;
-      text-transform: uppercase; cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn-outline:hover { background: var(--gold); color: var(--deep); }
-
-    /* sparkle ticker */
-    .ticker-wrap {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: var(--hot); overflow: hidden;
-      padding: 10px 0; border-top: 2px solid var(--gold);
-    }
-    .ticker {
-      display: flex; gap: 0;
-      animation: ticker 28s linear infinite;
-      white-space: nowrap;
-    }
-    .ticker-item {
-      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: #fff; font-weight: 500; padding: 0 32px;
-    }
-    .ticker-item::after { content: ' ✦ '; color: var(--gold); margin-left: 24px; }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── MASCOT PLACEHOLDER ── */
-    #mascot {
-      background: var(--deep);
-      padding: 80px 48px;
-      display: flex; align-items: center; justify-content: center; gap: 64px;
-      flex-wrap: wrap;
-    }
-
-    .mascot-placeholder {
-      width: 260px; height: 260px;
-      border: 3px dashed var(--gold);
-      border-radius: 50%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      color: var(--gold); gap: 8px;
-    }
-    .mascot-placeholder .icon { font-size: 3rem; }
-    .mascot-placeholder p { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; text-align: center; padding: 0 20px; }
-
-    .mascot-text { max-width: 420px; }
-    .mascot-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem; font-weight: 900; color: #fff; line-height: 1.1;
-    }
-    .mascot-text h2 em { color: var(--gold); font-style: normal; }
-    .mascot-text p {
-      margin-top: 16px; color: var(--blush);
-      font-size: 0.95rem; line-height: 1.7;
-    }
-    .mascot-text .coming-soon-tag {
-      display: inline-block; margin-top: 20px;
-      background: rgba(255,215,0,0.15); border: 1px solid var(--gold);
-      color: var(--gold); font-size: 0.72rem; letter-spacing: 0.2em;
-      text-transform: uppercase; padding: 6px 16px; border-radius: 100px;
-    }
-
-    /* ── ABOUT ── */
-    #about {
-      padding: 100px 48px;
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-      align-items: center;
-    }
-
-    .about-label {
-      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--hot); font-weight: 500; margin-bottom: 12px;
-    }
-    .about-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 900; line-height: 1.1; color: var(--deep);
-    }
-    .about-heading em { color: var(--hot); font-style: italic; }
-
-    .about-body {
-      margin-top: 20px; font-size: 1rem; line-height: 1.8; color: #4a2030;
-    }
-
-    .about-pillars {
-      display: flex; flex-direction: column; gap: 20px;
-    }
-
-    .pillar {
-      background: #fff;
-      border: 1.5px solid var(--blush);
-      border-radius: 16px;
-      padding: 24px 28px;
-      display: flex; gap: 20px; align-items: flex-start;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .pillar:hover { border-color: var(--hot); transform: translateX(6px); }
-
-    .pillar-icon {
-      font-size: 1.8rem; flex-shrink: 0;
-      width: 48px; height: 48px;
-      background: var(--cream); border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    .pillar-text h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; font-weight: 700; color: var(--deep);
-    }
-    .pillar-text p { font-size: 0.88rem; color: #7a4055; margin-top: 4px; line-height: 1.6; }
-
-    /* ── MANIFESTO ── */
-    #manifesto {
-      background: linear-gradient(135deg, #FF2D78 0%, #FF006E 50%, #c2005a 100%);
-      padding: 100px 48px;
-      text-align: center;
       position: relative; overflow: hidden;
     }
 
-    #manifesto::before {
-      content: '✦';
-      position: absolute; font-size: 40rem; color: rgba(255,255,255,0.04);
-      top: 50%; left: 50%; transform: translate(-50%, -50%);
-      pointer-events: none; line-height: 1;
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.25; animation: float 8s ease-in-out infinite; }
+    .blob-1 { width: 500px; height: 500px; background: var(--pink); top: -120px; left: -100px; animation-delay: 0s; }
+    .blob-2 { width: 400px; height: 400px; background: var(--gold); top: 40%; right: -100px; animation-delay: -3s; }
+    .blob-3 { width: 300px; height: 300px; background: var(--blush); bottom: 0; left: 30%; animation-delay: -5s; }
+    @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-30px) scale(1.06); } }
+
+    /* hero mandala */
+    .hero-mandala {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 750px; height: 750px;
+      opacity: 0.055;
+      animation: spin-slow 90s linear infinite;
+      pointer-events: none; z-index: 0;
+    }
+    @keyframes spin-slow { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+    .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--hot); font-weight: 500; margin-bottom: 20px; animation: fadeUp 0.8s ease both; position: relative; z-index: 1; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 10vw, 8rem); font-weight: 900; line-height: 0.95; color: var(--deep); animation: fadeUp 0.9s 0.1s ease both; position: relative; z-index: 1; }
+    .hero-title .pink { color: var(--hot); }
+    .hero-title .gold { color: var(--gold); -webkit-text-stroke: 1px var(--gold); }
+    .hero-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.1rem, 3vw, 1.7rem); color: var(--pink); margin-top: 16px; animation: fadeUp 1s 0.2s ease both; position: relative; z-index: 1; }
+    .hero-slogan { margin-top: 24px; font-size: 0.88rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--deep); opacity: 0.6; animation: fadeUp 1s 0.3s ease both; position: relative; z-index: 1; }
+    .hero-cta-row { margin-top: 44px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeUp 1s 0.45s ease both; position: relative; z-index: 1; }
+
+    .btn-primary { background: var(--hot); color: #fff; border: none; padding: 16px 40px; border-radius: 100px; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 8px 32px rgba(255,0,110,0.35); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(255,0,110,0.45); }
+    .btn-outline { background: transparent; color: var(--deep); border: 2px solid var(--gold); padding: 14px 38px; border-radius: 100px; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; }
+    .btn-outline:hover { background: var(--gold); color: var(--deep); }
+
+    .ticker-wrap { position: absolute; bottom: 0; left: 0; right: 0; background: var(--hot); overflow: hidden; padding: 10px 0; border-top: 2px solid var(--gold); z-index: 1; }
+    .ticker { display: flex; gap: 0; animation: ticker 28s linear infinite; white-space: nowrap; }
+    .ticker-item { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; font-weight: 500; padding: 0 32px; }
+    .ticker-item::after { content: ' ✦ '; color: var(--gold); margin-left: 24px; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── MANDALA DIVIDER ── */
+    .mandala-divider {
+      display: flex; align-items: center; justify-content: center;
+      gap: 20px; padding: 36px 48px;
+      background: var(--cream); overflow: hidden;
+    }
+    .mandala-divider .div-line {
+      flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.5;
+    }
+    .mandala-divider .div-mandala {
+      flex-shrink: 0;
+      animation: spin-slow 40s linear infinite;
+      opacity: 0.22;
     }
 
-    .manifesto-label {
-      font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--gold-light); margin-bottom: 16px;
+    /* ── MASCOT ── */
+    #mascot { background: var(--deep); padding: 80px 48px; display: flex; align-items: center; justify-content: center; gap: 64px; flex-wrap: wrap; position: relative; overflow: hidden; }
+    .mascot-mandala-bg {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      opacity: 0.04; pointer-events: none;
+      animation: spin-slow 120s linear infinite reverse;
     }
-    .manifesto-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 900; color: #fff; line-height: 1.05;
+    .mascot-placeholder { width: 260px; height: 260px; border: 3px dashed var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--gold); gap: 8px; position: relative; z-index: 1; }
+    .mascot-placeholder .icon { font-size: 3rem; }
+    .mascot-placeholder p { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; text-align: center; padding: 0 20px; }
+    .mascot-text { max-width: 420px; position: relative; z-index: 1; }
+    .mascot-text h2 { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: #fff; line-height: 1.1; }
+    .mascot-text h2 em { color: var(--gold); font-style: normal; }
+    .mascot-text p { margin-top: 16px; color: var(--blush); font-size: 0.95rem; line-height: 1.7; }
+    .mascot-text .coming-soon-tag { display: inline-block; margin-top: 20px; background: rgba(255,215,0,0.15); border: 1px solid var(--gold); color: var(--gold); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; }
+
+    /* ── ABOUT ── */
+    #about-wrap { position: relative; overflow: hidden; }
+    .about-corner-mandala {
+      position: absolute; pointer-events: none; opacity: 0.07;
     }
+    .about-corner-mandala.tl { top: -80px; left: -80px; }
+    .about-corner-mandala.br { bottom: -80px; right: -80px; transform: rotate(180deg); }
+
+    #about { padding: 100px 48px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+    .about-label { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--hot); font-weight: 500; margin-bottom: 12px; }
+    .about-heading { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.1; color: var(--deep); }
+    .about-heading em { color: var(--hot); font-style: italic; }
+    .about-body { margin-top: 20px; font-size: 1rem; line-height: 1.8; color: #4a2030; }
+    .about-pillars { display: flex; flex-direction: column; gap: 20px; }
+    .pillar { background: #fff; border: 1.5px solid var(--blush); border-radius: 16px; padding: 24px 28px; display: flex; gap: 20px; align-items: flex-start; transition: border-color 0.2s, transform 0.2s; }
+    .pillar:hover { border-color: var(--hot); transform: translateX(6px); }
+    .pillar-icon { font-size: 1.8rem; flex-shrink: 0; width: 48px; height: 48px; background: var(--cream); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    .pillar-text h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--deep); }
+    .pillar-text p { font-size: 0.88rem; color: #7a4055; margin-top: 4px; line-height: 1.6; }
+
+    /* ── MANIFESTO ── */
+    #manifesto { background: linear-gradient(135deg, #FF2D78 0%, #FF006E 50%, #c2005a 100%); padding: 100px 48px; text-align: center; position: relative; overflow: hidden; }
+    .manifesto-mandala {
+      position: absolute; pointer-events: none; opacity: 0.06;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      animation: spin-slow 70s linear infinite;
+    }
+    .manifesto-label { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px; position: relative; z-index: 1; }
+    .manifesto-heading { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; color: #fff; line-height: 1.05; position: relative; z-index: 1; }
     .manifesto-heading em { color: var(--gold); font-style: italic; }
-
-    .manifesto-placeholder {
-      margin: 48px auto;
-      max-width: 700px;
-      border: 2px dashed rgba(255,255,255,0.35);
-      border-radius: 24px;
-      padding: 60px 40px;
-      color: rgba(255,255,255,0.65);
-    }
+    .manifesto-placeholder { margin: 48px auto; max-width: 700px; border: 2px dashed rgba(255,255,255,0.35); border-radius: 24px; padding: 60px 40px; color: rgba(255,255,255,0.65); position: relative; z-index: 1; }
     .manifesto-placeholder .big-icon { font-size: 3.5rem; margin-bottom: 16px; }
-    .manifesto-placeholder h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem; color: #fff; margin-bottom: 10px;
-    }
+    .manifesto-placeholder h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
     .manifesto-placeholder p { font-size: 0.9rem; line-height: 1.7; }
-
-    .manifesto-cta {
-      margin-top: 40px;
-      display: inline-block;
-      background: var(--gold);
-      color: var(--deep); border: none;
-      padding: 16px 44px; border-radius: 100px;
-      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    }
+    .manifesto-cta { margin-top: 40px; display: inline-block; background: var(--gold); color: var(--deep); border: none; padding: 16px 44px; border-radius: 100px; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 8px 30px rgba(0,0,0,0.2); position: relative; z-index: 1; }
     .manifesto-cta:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
 
     /* ── SOCIAL ── */
-    #social {
-      padding: 100px 48px;
-      text-align: center;
-    }
-    #social .section-label {
-      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--hot); margin-bottom: 14px;
-    }
-    #social h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--deep);
-    }
+    #social { padding: 100px 48px; text-align: center; }
+    #social .section-label { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--hot); margin-bottom: 14px; }
+    #social h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--deep); }
     #social h2 em { color: var(--hot); font-style: italic; }
     #social p.sub { color: #7a4055; font-size: 0.95rem; margin-top: 12px; }
-
-    .social-grid {
-      margin-top: 56px;
-      display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
-    }
-
-    .social-card {
-      background: #fff;
-      border: 1.5px solid var(--blush);
-      border-radius: 20px;
-      padding: 36px 40px;
-      width: 220px;
-      display: flex; flex-direction: column;
-      align-items: center; gap: 14px;
-      cursor: pointer;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-      text-decoration: none;
-    }
-    .social-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--hot);
-      box-shadow: 0 20px 50px rgba(255,0,110,0.12);
-    }
+    .social-grid { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .social-card { background: #fff; border: 1.5px solid var(--blush); border-radius: 20px; padding: 36px 40px; width: 220px; display: flex; flex-direction: column; align-items: center; gap: 14px; cursor: pointer; transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s; text-decoration: none; }
+    .social-card:hover { transform: translateY(-8px); border-color: var(--hot); box-shadow: 0 20px 50px rgba(255,0,110,0.12); }
     .social-icon { font-size: 2.4rem; }
-    .social-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; font-weight: 700; color: var(--deep);
-    }
+    .social-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--deep); }
     .social-handle { font-size: 0.78rem; color: var(--hot); letter-spacing: 0.05em; }
-
-    .hashtag-strip {
-      margin-top: 56px;
-      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
-    }
-    .hashtag {
-      background: var(--cream);
-      border: 1.5px solid var(--blush);
-      color: var(--hot); font-size: 0.82rem; font-weight: 500;
-      padding: 8px 20px; border-radius: 100px;
-      letter-spacing: 0.05em;
-      transition: background 0.2s;
-      cursor: pointer;
-    }
+    .hashtag-strip { margin-top: 56px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .hashtag { background: var(--cream); border: 1.5px solid var(--blush); color: var(--hot); font-size: 0.82rem; font-weight: 500; padding: 8px 20px; border-radius: 100px; letter-spacing: 0.05em; transition: background 0.2s; cursor: pointer; }
     .hashtag:hover { background: var(--blush); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--deep);
-      padding: 48px;
-      text-align: center;
+    footer { background: var(--deep); padding: 48px; text-align: center; position: relative; overflow: hidden; }
+    .footer-mandala {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      pointer-events: none; opacity: 0.055;
+      animation: spin-slow 100s linear infinite reverse;
     }
-    footer .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem; font-weight: 900;
-      color: #fff; margin-bottom: 8px;
-    }
+    footer .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: #fff; margin-bottom: 8px; position: relative; z-index: 1; }
     footer .footer-logo span { color: var(--gold); }
-    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; }
-    footer .footer-disclaimer {
-      margin-top: 16px; font-size: 0.72rem;
-      color: rgba(255,255,255,0.25); max-width: 500px; margin-inline: auto;
-      line-height: 1.6;
-    }
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; position: relative; z-index: 1; }
+    footer .footer-disclaimer { margin-top: 16px; font-size: 0.72rem; color: rgba(255,255,255,0.25); max-width: 500px; margin-inline: auto; line-height: 1.6; }
     footer .heart { color: var(--hot); }
 
-    /* ── GLITTER PARTICLES ── */
-    .sparkle {
-      position: fixed; pointer-events: none; z-index: 9998;
-      font-size: 1rem; animation: sparkle-fall 1.2s ease-out forwards;
-    }
-    @keyframes sparkle-fall {
-      0%   { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
-      100% { opacity: 0; transform: translateY(60px) scale(0) rotate(180deg); }
-    }
+    /* ── SPARKLES ── */
+    .sparkle { position: fixed; pointer-events: none; z-index: 9998; font-size: 1rem; animation: sparkle-fall 1.2s ease-out forwards; }
+    @keyframes sparkle-fall { 0% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); } 100% { opacity: 0; transform: translateY(60px) scale(0) rotate(180deg); } }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
@@ -426,6 +214,7 @@
       #manifesto { padding: 60px 24px; }
       #social { padding: 60px 24px; }
       footer { padding: 40px 24px; }
+      .hero-mandala { width: 420px; height: 420px; }
     }
   </style>
 </head>
@@ -448,6 +237,101 @@
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
 
+  <!-- Hero mandala — rich, 16-petal, multi-ring -->
+  <svg class="hero-mandala" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#FF006E" stroke-width="0.6" transform="translate(200,200)">
+      <circle r="192"/><circle r="172"/><circle r="148"/><circle r="124"/>
+      <circle r="100"/><circle r="76"/><circle r="54"/><circle r="34"/><circle r="16"/><circle r="6"/>
+      <!-- 16 outer petals -->
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(22.5)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(67.5)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(112.5)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(157.5)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(202.5)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(247.5)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(292.5)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(315)"/>
+      <ellipse cx="0" cy="-160" rx="11" ry="28" transform="rotate(337.5)"/>
+      <!-- 8 mid petals -->
+      <ellipse cx="0" cy="-100" rx="9" ry="22" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-100" rx="9" ry="22" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-100" rx="9" ry="22" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-100" rx="9" ry="22" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-100" rx="9" ry="22" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-100" rx="9" ry="22" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-100" rx="9" ry="22" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-100" rx="9" ry="22" transform="rotate(315)"/>
+      <!-- 8 inner petals offset -->
+      <ellipse cx="0" cy="-56" rx="6" ry="14" transform="rotate(22.5)"/>
+      <ellipse cx="0" cy="-56" rx="6" ry="14" transform="rotate(67.5)"/>
+      <ellipse cx="0" cy="-56" rx="6" ry="14" transform="rotate(112.5)"/>
+      <ellipse cx="0" cy="-56" rx="6" ry="14" transform="rotate(157.5)"/>
+      <ellipse cx="0" cy="-56" rx="6" ry="14" transform="rotate(202.5)"/>
+      <ellipse cx="0" cy="-56" rx="6" ry="14" transform="rotate(247.5)"/>
+      <ellipse cx="0" cy="-56" rx="6" ry="14" transform="rotate(292.5)"/>
+      <ellipse cx="0" cy="-56" rx="6" ry="14" transform="rotate(337.5)"/>
+      <!-- spokes -->
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(0)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(22.5)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(45)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(67.5)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(90)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(112.5)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(135)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(157.5)"/>
+      <!-- outer dot ring -->
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(0)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(22.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(45)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(67.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(90)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(112.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(135)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(157.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(180)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(202.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(225)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(247.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(270)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(292.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(315)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FF006E" transform="rotate(337.5)"/>
+      <!-- mid dot ring gold -->
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(11.25)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(33.75)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(56.25)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(78.75)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(101.25)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(123.75)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(146.25)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(168.75)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(191.25)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(213.75)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(236.25)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(258.75)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(281.25)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(303.75)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(326.25)"/>
+      <circle cx="0" cy="-148" r="2.5" fill="#FFD700" transform="rotate(348.75)"/>
+      <!-- inner diamond ring -->
+      <circle cx="0" cy="-76" r="2" fill="#FF006E" transform="rotate(0)"/>
+      <circle cx="0" cy="-76" r="2" fill="#FF006E" transform="rotate(45)"/>
+      <circle cx="0" cy="-76" r="2" fill="#FF006E" transform="rotate(90)"/>
+      <circle cx="0" cy="-76" r="2" fill="#FF006E" transform="rotate(135)"/>
+      <circle cx="0" cy="-76" r="2" fill="#FF006E" transform="rotate(180)"/>
+      <circle cx="0" cy="-76" r="2" fill="#FF006E" transform="rotate(225)"/>
+      <circle cx="0" cy="-76" r="2" fill="#FF006E" transform="rotate(270)"/>
+      <circle cx="0" cy="-76" r="2" fill="#FF006E" transform="rotate(315)"/>
+    </g>
+  </svg>
+
   <p class="hero-eyebrow">✦ India's Most Glamorous Movement ✦</p>
   <h1 class="hero-title">
     <span class="pink">Baddie</span><br/>
@@ -461,7 +345,6 @@
     <button class="btn-outline" onclick="document.getElementById('manifesto').scrollIntoView({behavior:'smooth'})">Read Manifesto</button>
   </div>
 
-  <!-- ticker -->
   <div class="ticker-wrap">
     <div class="ticker">
       <span class="ticker-item">Baddie Janata Party</span>
@@ -480,8 +363,51 @@
   </div>
 </section>
 
-<!-- MASCOT PLACEHOLDER -->
+<!-- MASCOT -->
 <section id="mascot">
+  <!-- big background mandala for mascot section -->
+  <svg class="mascot-mandala-bg" width="700" height="700" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#FFD700" stroke-width="0.7" transform="translate(200,200)">
+      <circle r="190"/><circle r="160"/><circle r="130"/><circle r="100"/><circle r="70"/><circle r="40"/><circle r="18"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(30)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(60)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(120)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(150)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(210)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(240)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(300)"/>
+      <ellipse cx="0" cy="-145" rx="12" ry="30" transform="rotate(330)"/>
+      <ellipse cx="0" cy="-88" rx="8" ry="20" transform="rotate(15)"/>
+      <ellipse cx="0" cy="-88" rx="8" ry="20" transform="rotate(75)"/>
+      <ellipse cx="0" cy="-88" rx="8" ry="20" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-88" rx="8" ry="20" transform="rotate(195)"/>
+      <ellipse cx="0" cy="-88" rx="8" ry="20" transform="rotate(255)"/>
+      <ellipse cx="0" cy="-88" rx="8" ry="20" transform="rotate(315)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(0)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(30)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(60)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(90)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(120)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(150)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(0)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(30)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(60)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(90)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(120)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(150)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(180)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(210)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(240)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(270)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(300)"/>
+      <circle cx="0" cy="-188" r="4" fill="#FFD700" transform="rotate(330)"/>
+    </g>
+  </svg>
+
   <div class="mascot-placeholder">
     <div class="icon">🎀</div>
     <p>Mascot &amp; Logo<br/>Coming Soon</p>
@@ -493,53 +419,187 @@
   </div>
 </section>
 
+<!-- MANDALA DIVIDER -->
+<div class="mandala-divider">
+  <div class="div-line"></div>
+  <svg class="div-mandala" width="90" height="90" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#FF006E" stroke-width="1.2" transform="translate(100,100)">
+      <circle r="92"/><circle r="74"/><circle r="56"/><circle r="38"/><circle r="20"/><circle r="7"/>
+      <ellipse cx="0" cy="-65" rx="8" ry="18" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-65" rx="8" ry="18" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-65" rx="8" ry="18" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-65" rx="8" ry="18" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-65" rx="8" ry="18" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-65" rx="8" ry="18" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-65" rx="8" ry="18" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-65" rx="8" ry="18" transform="rotate(315)"/>
+      <ellipse cx="0" cy="-40" rx="5" ry="11" transform="rotate(22.5)"/>
+      <ellipse cx="0" cy="-40" rx="5" ry="11" transform="rotate(67.5)"/>
+      <ellipse cx="0" cy="-40" rx="5" ry="11" transform="rotate(112.5)"/>
+      <ellipse cx="0" cy="-40" rx="5" ry="11" transform="rotate(157.5)"/>
+      <ellipse cx="0" cy="-40" rx="5" ry="11" transform="rotate(202.5)"/>
+      <ellipse cx="0" cy="-40" rx="5" ry="11" transform="rotate(247.5)"/>
+      <ellipse cx="0" cy="-40" rx="5" ry="11" transform="rotate(292.5)"/>
+      <ellipse cx="0" cy="-40" rx="5" ry="11" transform="rotate(337.5)"/>
+      <line x1="0" y1="-92" x2="0" y2="92" transform="rotate(0)"/>
+      <line x1="0" y1="-92" x2="0" y2="92" transform="rotate(45)"/>
+      <line x1="0" y1="-92" x2="0" y2="92" transform="rotate(90)"/>
+      <line x1="0" y1="-92" x2="0" y2="92" transform="rotate(135)"/>
+      <circle cx="0" cy="-91" r="3" fill="#FFD700" transform="rotate(0)"/>
+      <circle cx="0" cy="-91" r="3" fill="#FFD700" transform="rotate(45)"/>
+      <circle cx="0" cy="-91" r="3" fill="#FFD700" transform="rotate(90)"/>
+      <circle cx="0" cy="-91" r="3" fill="#FFD700" transform="rotate(135)"/>
+      <circle cx="0" cy="-91" r="3" fill="#FFD700" transform="rotate(180)"/>
+      <circle cx="0" cy="-91" r="3" fill="#FFD700" transform="rotate(225)"/>
+      <circle cx="0" cy="-91" r="3" fill="#FFD700" transform="rotate(270)"/>
+      <circle cx="0" cy="-91" r="3" fill="#FFD700" transform="rotate(315)"/>
+    </g>
+  </svg>
+  <div class="div-line"></div>
+</div>
+
 <!-- ABOUT -->
-<section id="about">
-  <div>
-    <p class="about-label">✦ Who we are</p>
-    <h2 class="about-heading">The party that finally <em>gets</em> it.</h2>
-    <p class="about-body">
-      Baddie Janata Party is a social media movement for everyone who believes that
-      politics doesn't have to be boring, dull, or badly dressed. We stand for
-      bold ideas, zero drama (well, the fun kind), and a future that slays.
-      <br/><br/>
-      Not your typical party. We show up, we speak up, and we look good doing it.
-    </p>
-  </div>
-  <div class="about-pillars">
-    <div class="pillar">
-      <div class="pillar-icon">💄</div>
-      <div class="pillar-text">
-        <h4>Unapologetically Bold</h4>
-        <p>We say what we mean and we mean what we slay. No corporate doublespeak here.</p>
+<div id="about-wrap">
+  <!-- corner mandalas -->
+  <svg class="about-corner-mandala tl" width="260" height="260" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#FF2D78" stroke-width="0.8" transform="translate(0,0)">
+      <circle cx="0" cy="0" r="240"/><circle cx="0" cy="0" r="200"/><circle cx="0" cy="0" r="160"/><circle cx="0" cy="0" r="120"/><circle cx="0" cy="0" r="80"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(0 0 0)"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(20 0 0)"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(40 0 0)"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(60 0 0)"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(80 0 0)"/>
+      <ellipse cx="0" cy="-100" rx="7" ry="17" transform="rotate(10 0 0)"/>
+      <ellipse cx="0" cy="-100" rx="7" ry="17" transform="rotate(30 0 0)"/>
+      <ellipse cx="0" cy="-100" rx="7" ry="17" transform="rotate(50 0 0)"/>
+      <ellipse cx="0" cy="-100" rx="7" ry="17" transform="rotate(70 0 0)"/>
+      <line x1="0" y1="0" x2="240" y2="0" transform="rotate(0 0 0)"/>
+      <line x1="0" y1="0" x2="240" y2="0" transform="rotate(20 0 0)"/>
+      <line x1="0" y1="0" x2="240" y2="0" transform="rotate(40 0 0)"/>
+      <line x1="0" y1="0" x2="240" y2="0" transform="rotate(60 0 0)"/>
+      <line x1="0" y1="0" x2="240" y2="0" transform="rotate(80 0 0)"/>
+      <circle cx="238" cy="0" r="3.5" fill="#FFD700" transform="rotate(0 0 0)"/>
+      <circle cx="238" cy="0" r="3.5" fill="#FFD700" transform="rotate(20 0 0)"/>
+      <circle cx="238" cy="0" r="3.5" fill="#FFD700" transform="rotate(40 0 0)"/>
+      <circle cx="238" cy="0" r="3.5" fill="#FFD700" transform="rotate(60 0 0)"/>
+      <circle cx="238" cy="0" r="3.5" fill="#FFD700" transform="rotate(80 0 0)"/>
+    </g>
+  </svg>
+  <svg class="about-corner-mandala br" width="260" height="260" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#FF006E" stroke-width="0.8" transform="translate(260,260)">
+      <circle cx="0" cy="0" r="240"/><circle cx="0" cy="0" r="200"/><circle cx="0" cy="0" r="160"/><circle cx="0" cy="0" r="120"/><circle cx="0" cy="0" r="80"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(180 0 0)"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(200 0 0)"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(220 0 0)"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(240 0 0)"/>
+      <ellipse cx="0" cy="-170" rx="11" ry="26" transform="rotate(260 0 0)"/>
+      <ellipse cx="0" cy="-100" rx="7" ry="17" transform="rotate(190 0 0)"/>
+      <ellipse cx="0" cy="-100" rx="7" ry="17" transform="rotate(210 0 0)"/>
+      <ellipse cx="0" cy="-100" rx="7" ry="17" transform="rotate(230 0 0)"/>
+      <ellipse cx="0" cy="-100" rx="7" ry="17" transform="rotate(250 0 0)"/>
+      <line x1="0" y1="0" x2="-240" y2="0" transform="rotate(180 0 0)"/>
+      <line x1="0" y1="0" x2="-240" y2="0" transform="rotate(200 0 0)"/>
+      <line x1="0" y1="0" x2="-240" y2="0" transform="rotate(220 0 0)"/>
+      <line x1="0" y1="0" x2="-240" y2="0" transform="rotate(240 0 0)"/>
+      <line x1="0" y1="0" x2="-240" y2="0" transform="rotate(260 0 0)"/>
+      <circle cx="-238" cy="0" r="3.5" fill="#FFD700" transform="rotate(180 0 0)"/>
+      <circle cx="-238" cy="0" r="3.5" fill="#FFD700" transform="rotate(200 0 0)"/>
+      <circle cx="-238" cy="0" r="3.5" fill="#FFD700" transform="rotate(220 0 0)"/>
+      <circle cx="-238" cy="0" r="3.5" fill="#FFD700" transform="rotate(240 0 0)"/>
+      <circle cx="-238" cy="0" r="3.5" fill="#FFD700" transform="rotate(260 0 0)"/>
+    </g>
+  </svg>
+
+  <section id="about">
+    <div>
+      <p class="about-label">✦ Who we are</p>
+      <h2 class="about-heading">The party that finally <em>gets</em> it.</h2>
+      <p class="about-body">
+        Baddie Janata Party is a social media movement for everyone who believes that
+        politics doesn't have to be boring, dull, or badly dressed. We stand for
+        bold ideas, zero drama (well, the fun kind), and a future that slays.
+        <br/><br/>
+        Not your typical party. We show up, we speak up, and we look good doing it.
+      </p>
+    </div>
+    <div class="about-pillars">
+      <div class="pillar">
+        <div class="pillar-icon">💄</div>
+        <div class="pillar-text">
+          <h4>Unapologetically Bold</h4>
+          <p>We say what we mean and we mean what we slay. No corporate doublespeak here.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">✨</div>
+        <div class="pillar-text">
+          <h4>Radically Inclusive</h4>
+          <p>Every baddie is welcome — across gender, state, language, and aesthetic.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">👑</div>
+        <div class="pillar-text">
+          <h4>Main Character Energy</h4>
+          <p>This is your country too. Stop being a side character in someone else's story.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌸</div>
+        <div class="pillar-text">
+          <h4>Soft but Serious</h4>
+          <p>Pretty outside, sharp inside. We do our research and we do our blush.</p>
+        </div>
       </div>
     </div>
-    <div class="pillar">
-      <div class="pillar-icon">✨</div>
-      <div class="pillar-text">
-        <h4>Radically Inclusive</h4>
-        <p>Every baddie is welcome — across gender, state, language, and aesthetic.</p>
-      </div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">👑</div>
-      <div class="pillar-text">
-        <h4>Main Character Energy</h4>
-        <p>This is your country too. Stop being a side character in someone else's story.</p>
-      </div>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon">🌸</div>
-      <div class="pillar-text">
-        <h4>Soft but Serious</h4>
-        <p>Pretty outside, sharp inside. We do our research and we do our blush.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <!-- MANIFESTO -->
 <section id="manifesto">
+  <!-- manifesto mandala watermark -->
+  <svg class="manifesto-mandala" width="600" height="600" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#fff" stroke-width="0.7" transform="translate(200,200)">
+      <circle r="190"/><circle r="165"/><circle r="140"/><circle r="115"/><circle r="90"/><circle r="65"/><circle r="42"/><circle r="22"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(30)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(60)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(120)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(150)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(210)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(240)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(300)"/>
+      <ellipse cx="0" cy="-152" rx="10" ry="24" transform="rotate(330)"/>
+      <ellipse cx="0" cy="-90" rx="7" ry="18" transform="rotate(15)"/>
+      <ellipse cx="0" cy="-90" rx="7" ry="18" transform="rotate(75)"/>
+      <ellipse cx="0" cy="-90" rx="7" ry="18" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-90" rx="7" ry="18" transform="rotate(195)"/>
+      <ellipse cx="0" cy="-90" rx="7" ry="18" transform="rotate(255)"/>
+      <ellipse cx="0" cy="-90" rx="7" ry="18" transform="rotate(315)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(0)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(30)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(60)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(90)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(120)"/>
+      <line x1="0" y1="-190" x2="0" y2="190" transform="rotate(150)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(0)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(30)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(60)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(90)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(120)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(150)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(180)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(210)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(240)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(270)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(300)"/>
+      <circle cx="0" cy="-188" r="3.5" fill="#fff" transform="rotate(330)"/>
+    </g>
+  </svg>
+
   <p class="manifesto-label">✦ Our Promise to the Nation ✦</p>
   <h2 class="manifesto-heading">The <em>Manifesto</em></h2>
   <div class="manifesto-placeholder">
@@ -555,7 +615,6 @@
   <p class="section-label">✦ Stay Connected ✦</p>
   <h2>Follow the <em>Movement</em></h2>
   <p class="sub">We live on the internet. Find us, follow us, quote-tweet us.</p>
-
   <div class="social-grid">
     <a class="social-card" href="#" onclick="return false;">
       <div class="social-icon">🐦</div>
@@ -578,7 +637,6 @@
       <div class="social-handle">Join our Channel</div>
     </a>
   </div>
-
   <div class="hashtag-strip">
     <span class="hashtag">#BaddieJanataParty</span>
     <span class="hashtag">#SlayTheSystem</span>
@@ -591,13 +649,67 @@
 
 <!-- FOOTER -->
 <footer>
+  <!-- footer mandala watermark -->
+  <svg class="footer-mandala" width="560" height="560" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#FF006E" stroke-width="0.7" transform="translate(200,200)">
+      <circle r="192"/><circle r="168"/><circle r="144"/><circle r="120"/><circle r="96"/><circle r="72"/><circle r="50"/><circle r="30"/><circle r="14"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(0)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(22.5)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(45)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(67.5)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(90)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(112.5)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(135)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(157.5)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(180)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(202.5)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(225)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(247.5)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(270)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(292.5)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(315)"/>
+      <ellipse cx="0" cy="-156" rx="11" ry="27" transform="rotate(337.5)"/>
+      <ellipse cx="0" cy="-95" rx="8" ry="20" transform="rotate(11.25)"/>
+      <ellipse cx="0" cy="-95" rx="8" ry="20" transform="rotate(56.25)"/>
+      <ellipse cx="0" cy="-95" rx="8" ry="20" transform="rotate(101.25)"/>
+      <ellipse cx="0" cy="-95" rx="8" ry="20" transform="rotate(146.25)"/>
+      <ellipse cx="0" cy="-95" rx="8" ry="20" transform="rotate(191.25)"/>
+      <ellipse cx="0" cy="-95" rx="8" ry="20" transform="rotate(236.25)"/>
+      <ellipse cx="0" cy="-95" rx="8" ry="20" transform="rotate(281.25)"/>
+      <ellipse cx="0" cy="-95" rx="8" ry="20" transform="rotate(326.25)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(0)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(22.5)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(45)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(67.5)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(90)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(112.5)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(135)"/>
+      <line x1="0" y1="-192" x2="0" y2="192" transform="rotate(157.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(0)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(22.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(45)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(67.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(90)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(112.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(135)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(157.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(180)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(202.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(225)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(247.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(270)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(292.5)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(315)"/>
+      <circle cx="0" cy="-190" r="3.5" fill="#FFD700" transform="rotate(337.5)"/>
+    </g>
+  </svg>
+
   <div class="footer-logo">Baddie Janata Party <span>✦</span></div>
   <p>Slay. Vote. Repeat.</p>
   <p class="footer-disclaimer">This is a satirical social media campaign. Any resemblance to real political parties is entirely coincidental and possibly a bit funny. Made with <span class="heart">♥</span> and an excess of highlighter.</p>
 </footer>
 
 <script>
-  // Sparkle cursor trail
   function addSparkles(e) {
     const emojis = ['✨','💖','👑','🌸','💅','⭐','🎀','💄'];
     for (let i = 0; i < 10; i++) {
@@ -613,8 +725,6 @@
       }, i * 60);
     }
   }
-
-  // Cursor trail
   document.addEventListener('mousemove', (e) => {
     if (Math.random() > 0.94) {
       const el = document.createElement('span');
